@@ -7,3 +7,4 @@ Small programs with usable functionality
 
 * [Send email to an account](./email/README.md)
 * [Put watermark to PDF](./watermark/README.md)
+* [Translate file](./translator/README.md)

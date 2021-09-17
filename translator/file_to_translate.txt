@@ -1,0 +1,3 @@
+This is a file created to translate into different languages.
+
+The test has to execute all the lines.
