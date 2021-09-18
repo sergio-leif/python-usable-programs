@@ -21,7 +21,6 @@ available = False
 
 while available == False:
     time.sleep(30)
-    print()
     request = urllib.request.Request(url)
 
     r = urllib.request.urlopen(request).read()
