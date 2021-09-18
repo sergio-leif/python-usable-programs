@@ -12,3 +12,12 @@ Create an account and log in on https://www.twilio.com/. It is necessary to crea
 ```
     python sms_sender.py
 ```
+
+```
+    python check_appointments.py SOURCE_PHONE_NUMBER DESTINATION_PHONE_NUMBER URL_TO_CONSULT
+```
+
+For example:
+```
+    python check_appointments.py +19341234567 +19340987654 https://url.example.com
+```
