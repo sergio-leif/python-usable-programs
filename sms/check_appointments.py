@@ -3,6 +3,7 @@
 import os
 from twilio.rest import Client
 import urllib.request
+import json
 import time
 import sys
 
@@ -26,19 +27,16 @@ while available == False:
     r = urllib.request.urlopen(request).read()
 
     answer = r.decode('utf-8')
-    little = answer.split('\n')[135:180]
-    # print(little)
-    for line in little:
-        if 'Appointments Available' in line:
-            if '0 Appointments Available' in line:
-                print('There is not available appointments')
-                # message = client.messages \
-                #     .create(
-                #          body="Sorry, no appointments yet " + url,
-                #          from_=source_phone,
-                #          to=to_phone
-                #      )
-            else:
+    little = answer.split('\n')[234].split('= ')[1].replace('[','').replace(']','').replace('\r','')
+    lista = list(little.split('},'))
+    for index in range(len(lista)):
+        if index < len(lista)-1:
+            lista[index] += '}'
+        location = json.loads(lista[index])
+        location_id = location['LocationId']
+
+        if location_id == 200 or location_id == 206 or location_id == 193 or location_id == 194 or location_id == 207:
+            if location['FirstOpenSlot'] != 'No Appointments Available':
                 print('Run and take one appointment!')
                 message = client.messages \
                     .create(
@@ -47,3 +45,7 @@ while available == False:
                         to=to_phone
                     )
                 available = True
+                break
+        if index == len(lista)-1:
+            print('There are not available appointments yet')
+            
