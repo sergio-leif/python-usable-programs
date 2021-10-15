@@ -9,3 +9,4 @@ Small programs with usable functionality
 * [Put watermark to PDF](./watermark/README.md)
 * [Translate file](./translator/README.md)
 * [Send notifications with SMS](./sms/README.md)
+* [Password Checker](./password_checker/README.md)
