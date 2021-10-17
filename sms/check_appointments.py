@@ -18,10 +18,12 @@ to_phone = sys.argv[2]
 # URL to check
 url = sys.argv[3]
 
+desired_locations = [239, 252, 266, 240, 246, 253, 248]
+
 available = False
 
 while available == False:
-    time.sleep(30)
+    time.sleep(10)
     t = time.localtime()
     current_time = time.strftime("%H:%M:%S", t)
 
@@ -38,7 +40,7 @@ while available == False:
         location = json.loads(lista[index])
         location_id = location['LocationId']
 
-        if location_id == 200 or location_id == 206 or location_id == 193 or location_id == 194 or location_id == 207:
+        if location_id in desired_locations:
             if location['FirstOpenSlot'] != 'No Appointments Available':
                 print(f'[{current_time}] Run and take one appointment!')
                 message = client.messages \
