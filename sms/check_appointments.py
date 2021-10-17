@@ -22,6 +22,9 @@ available = False
 
 while available == False:
     time.sleep(30)
+    t = time.localtime()
+    current_time = time.strftime("%H:%M:%S", t)
+
     request = urllib.request.Request(url)
 
     r = urllib.request.urlopen(request).read()
@@ -37,7 +40,7 @@ while available == False:
 
         if location_id == 200 or location_id == 206 or location_id == 193 or location_id == 194 or location_id == 207:
             if location['FirstOpenSlot'] != 'No Appointments Available':
-                print('Run and take one appointment!')
+                print(f'[{current_time}] Run and take one appointment!')
                 message = client.messages \
                     .create(
                         body="Run and take one appointment! " + url,
@@ -47,5 +50,5 @@ while available == False:
                 available = True
                 break
         if index == len(lista)-1:
-            print('There are not available appointments yet')
+            print(f'[{current_time}] There are not available appointments yet')
             
