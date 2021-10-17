@@ -3,6 +3,13 @@
 
 Create an account and log in on https://www.twilio.com/. It is necessary to create a phone number and an auth token.
 
+Configure environment variables with your twilio account:
+
+```
+    export TWILIO_ACCOUNT_SID=$SID_ACCOUNT
+    export TWILIO_AUTH_TOKEN=$AUTH_TOKEN
+```
+
 ## Required modules
 ```
     pip install twilio
