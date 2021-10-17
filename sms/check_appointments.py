@@ -23,7 +23,7 @@ desired_locations = [239, 252, 266, 240, 246, 253, 248]
 available = False
 
 while available == False:
-    time.sleep(30)
+    time.sleep(15)
     t = time.localtime()
     current_time = time.strftime("%H:%M:%S", t)
 
@@ -42,7 +42,7 @@ while available == False:
 
         if location_id in desired_locations:
             if location['FirstOpenSlot'] != 'No Appointments Available':
-                print(f'[{current_time}] Run and take one appointment!')
+                print(f'[{current_time}] Run and take one appointment! {url}/{location_id}')
                 message = client.messages \
                     .create(
                         body="Run and take one appointment! " + url,
