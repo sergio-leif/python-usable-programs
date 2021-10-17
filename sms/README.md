@@ -1,7 +1,7 @@
 
 # Requirements
 
-Create an account and log in on https://www.twilio.com/. It is necessary to create a phone number and an auth token.
+Create an account and log in on https://www.twilio.com/referral/20w9Wq. It is necessary to create a phone number and an auth token.
 
 Configure environment variables with your twilio account:
 
