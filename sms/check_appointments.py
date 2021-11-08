@@ -23,7 +23,7 @@ desired_locations = [239, 252, 266, 240, 246, 253, 248]
 available = False
 
 while available == False:
-    time.sleep(15)
+    time.sleep(7)
     t = time.localtime()
     current_time = time.strftime("%H:%M:%S", t)
 
